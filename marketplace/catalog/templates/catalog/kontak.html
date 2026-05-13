@@ -1,25 +1,80 @@
 {% extends 'catalog/base.html' %}
 
 {% block content %}
-    <div class="max-w-lg mx-auto">
-        <h1 class="text-3xl font-bold mb-6 border-b pb-2">Hubungi Kami</h1>
-        <p class="text-gray-600 mb-6">Silakan hubungi kami melalui informasi kontak berikut:</p>
-        
-        <div class="bg-blue-50 rounded-lg p-6 border border-blue-100">
-            <ul class="space-y-4">
-                <li class="flex items-center">
-                    <span class="w-24 font-bold text-gray-700">Email:</span>
-                    <span class="text-blue-600">admin@katalog.com</span>
-                </li>
-                <li class="flex items-center">
-                    <span class="w-24 font-bold text-gray-700">Telepon:</span>
-                    <span class="text-gray-800">081234567890</span>
-                </li>
-                <li class="flex items-center">
-                    <span class="w-24 font-bold text-gray-700">Alamat:</span>
-                    <span class="text-gray-800">Darussalam, Banda Aceh</span>
-                </li>
-            </ul>
+<div class="container mx-auto px-6 py-12">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+        <h1 class="text-4xl font-extrabold text-gray-800 mb-4">Hubungi Kami</h1>
+        <p class="text-lg text-gray-600">Punya pertanyaan, keluhan, atau ide kerja sama? Jangan ragu untuk mengirim pesan kepada tim kami. Kami akan merespon secepatnya!</p>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto">
+        <!-- Informasi Kontak (Kiri) -->
+        <div class="lg:w-1/3 flex flex-col gap-6">
+            <div class="bg-blue-600 text-white rounded-2xl p-8 flex-grow shadow-lg relative overflow-hidden">
+                <div class="absolute -right-6 -top-6 text-blue-500 opacity-20 transform rotate-12" style="font-size: 8rem;">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-8 relative z-10">Informasi Kontak</h3>
+                
+                <ul class="space-y-6 relative z-10">
+                    <li class="flex items-start gap-4">
+                        <div class="bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-100">Alamat:</h4>
+                            <p>Darussalam, Kota Banda Aceh<br>Provinsi Aceh, Indonesia</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-100">Telepon:</h4>
+                            <p>+62 812-3456-7890<br>(Senin - Jumat, 08:00 - 17:00)</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-100">Email:</h4>
+                            <p>admin@techstore.co.id</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Form Kontak (Kanan) -->
+        <div class="lg:w-2/3 bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-4">Kirim Pesan</h3>
+            <form action="#" class="space-y-6" onsubmit="event.preventDefault(); alert('Pesan Dummy Terkirim!');">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Lengkap</label>
+                        <input type="text" class="w-full bg-gray-50 border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Masukkan nama Anda">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                        <input type="email" class="w-full bg-gray-50 border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Masukkan email Anda">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Subjek</label>
+                    <input type="text" class="w-full bg-gray-50 border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Apa yang ingin Anda bicarakan?">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Pesan</label>
+                    <textarea rows="5" class="w-full bg-gray-50 border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Tuliskan pesan Anda secara detail di sini..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition shadow-md">
+                    <i class="fas fa-paper-plane mr-2"></i> Kirim Pesan Sekarang
+                </button>
+            </form>
         </div>
     </div>
+</div>
 {% endblock %}

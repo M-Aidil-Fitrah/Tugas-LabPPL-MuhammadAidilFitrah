@@ -1,24 +1,63 @@
 {% extends 'catalog/base.html' %}
 
 {% block content %}
-    <div class="max-w-2xl mx-auto">
-        {% if produk %}
-            <div class="border rounded-lg p-8 shadow-sm bg-gray-50 text-center">
-                <h1 class="text-3xl font-bold text-gray-800 mb-4">{{ produk.nama }}</h1>
-                <p class="text-2xl text-blue-600 font-extrabold mb-6">Rp{{ produk.harga }}</p>
-                <div class="bg-white p-4 rounded text-left border mb-6 text-gray-700">
-                    <h3 class="font-semibold mb-2 border-b pb-1">Deskripsi Produk:</h3>
-                    <p>{{ produk.deskripsi }}</p>
+<div class="container mx-auto px-6 py-12">
+    <!-- Breadcrumb -->
+    <nav class="text-sm font-medium text-gray-500 mb-8">
+        <ol class="list-none p-0 inline-flex">
+            <li class="flex items-center">
+                <a href="/" class="hover:text-blue-600">Home</a>
+                <i class="fas fa-chevron-right text-xs mx-2"></i>
+            </li>
+            <li class="flex items-center">
+                <a href="/produk/" class="hover:text-blue-600">Produk</a>
+                <i class="fas fa-chevron-right text-xs mx-2"></i>
+            </li>
+            <li class="text-gray-800">{{ produk.nama|default:"Tidak Ditemukan" }}</li>
+        </ol>
+    </nav>
+
+    {% if produk %}
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 flex flex-col md:flex-row">
+            <!-- Product Image -->
+            <div class="md:w-1/2 p-8 lg:p-12 bg-gray-50 flex items-center justify-center">
+                <img src="{{ produk.gambar }}" alt="{{ produk.nama }}" class="rounded-xl shadow-md w-full h-auto object-cover max-h-96">
+            </div>
+            
+            <!-- Product Info -->
+            <div class="md:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+                <div class="inline-block bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full mb-4 w-max">
+                    <i class="fas fa-check-circle"></i> Stok Tersedia ({{ produk.stok }})
+                </div>
+                
+                <h1 class="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">{{ produk.nama }}</h1>
+                <p class="text-4xl text-blue-700 font-black mb-8 border-b-2 border-gray-100 pb-6">Rp {{ produk.harga }}</p>
+                
+                <div class="mb-8">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Deskripsi Produk:</h3>
+                    <p class="text-gray-600 leading-relaxed">{{ produk.deskripsi }}</p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mt-auto">
+                    <!-- Tombol ini hanya UI dummy -->
+                    <button class="flex-grow bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition shadow-lg flex justify-center items-center gap-2">
+                        <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+                    </button>
+                    <button class="bg-gray-100 text-gray-800 font-bold py-4 px-6 rounded-xl hover:bg-gray-200 transition border border-gray-300">
+                        <i class="far fa-heart"></i>
+                    </button>
                 </div>
             </div>
-        {% else %}
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                <strong class="font-bold">Error!</strong>
-                <span class="block sm:inline">Produk tidak ditemukan.</span>
-            </div>
-        {% endif %}
-        <div class="mt-6 text-center">
-            <a href="/produk/" class="text-blue-600 hover:text-blue-800 font-semibold">&larr; Kembali ke Daftar Produk</a>
         </div>
-    </div>
+    {% else %}
+        <div class="bg-red-50 border-l-4 border-red-500 p-8 rounded-lg text-center my-20 shadow-sm">
+            <div class="text-red-500 text-6xl mb-4"><i class="fas fa-exclamation-circle"></i></div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Produk Tidak Ditemukan</h2>
+            <p class="text-gray-600 mb-6">Maaf, entitas produk dengan ID yang Anda cari tidak tersedia di database katalog kami.</p>
+            <a href="/produk/" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold inline-block">
+                Kembali ke Katalog
+            </a>
+        </div>
+    {% endif %}
+</div>
 {% endblock %}

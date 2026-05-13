@@ -1,11 +1,49 @@
 {% extends 'catalog/base.html' %}
 
 {% block content %}
-    <div class="text-center py-10">
-        <h1 class="text-4xl font-extrabold text-blue-600 mb-4">Selamat Datang di Website Katalog!</h1>
-        <p class="text-lg text-gray-600">Ini adalah tugas pembuatan website katalog sederhana menggunakan Django dan Tailwind CSS.</p>
-        <div class="mt-8">
-            <a href="/produk/" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">Lihat Produk Kita</a>
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white pb-20 pt-16">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 animate-fade-in-up">
+                Selamat Datang di <span class="text-yellow-300">TechStore</span>!
+            </h1>
+            <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-10">
+                Temukan perangkat gaming, aksesoris komputer, dan kebutuhan teknologi terbaik dengan harga kompetitif.
+            </p>
+            <div>
+                <a href="/produk/" class="bg-yellow-400 text-blue-900 font-bold px-8 py-4 rounded-full shadow-lg hover:bg-yellow-300 transform hover:-translate-y-1 transition duration-300 inline-block">
+                    Mulai Belanja &rarr;
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keunggulan Section -->
+    <div class="container mx-auto px-6 -mt-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl p-8 shadow-lg text-center transform hover:scale-105 transition duration-300">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600 text-2xl">
+                    <i class="fas fa-truck-fast"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Pengiriman Cepat</h3>
+                <p class="text-gray-600 text-sm">Pesanan Anda akan langsung diproses dan dikirim di hari yang sama.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-8 shadow-lg text-center transform hover:scale-105 transition duration-300">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600 text-2xl">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Garansi Resmi</h3>
+                <p class="text-gray-600 text-sm">Semua barang dijamin 100% Original dan bergaransi resmi pabrik.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-8 shadow-lg text-center transform hover:scale-105 transition duration-300">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600 text-2xl">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Layanan CS 24/7</h3>
+                <p class="text-gray-600 text-sm">Tim Customer Service kami siap melayani Anda kapanpun Anda butuhkan.</p>
+            </div>
         </div>
     </div>
 {% endblock %}
