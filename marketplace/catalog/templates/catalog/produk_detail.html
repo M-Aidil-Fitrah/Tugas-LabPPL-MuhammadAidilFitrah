@@ -1,0 +1,13 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+    {% if produk %}
+        <h1>{{ produk.nama }}</h1>
+        <p><strong>Harga:</strong> Rp{{ produk.harga }}</p>
+        <p><strong>Deskripsi:</strong> {{ produk.deskripsi }}</p>
+    {% else %}
+        <h1>Produk tidak ditemukan.</h1>
+    {% endif %}
+    <br>
+    <a href="/produk/">Kembali ke Daftar Produk</a>
+{% endblock %}
