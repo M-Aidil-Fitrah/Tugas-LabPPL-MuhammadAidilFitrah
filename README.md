@@ -1,14 +1,16 @@
-# Tugas 3 Praktikum (PPL) - Website Katalog Sederhana
+# Tugas 3 Praktikum (PPL) - Website Katalog Sederhana (TechStore)
 
 Nama: Muhammad Aidil Fitrah
 NIM: 2308107010035
 
 ## Penjelasan Singkat Program
-Program ini adalah sebuah website katalog produk sederhana yang dibangun menggunakan framework web Django. Website ini tidak menggunakan database (data di-_hardcode_ pada bagian views) dan memiliki fitur sebagai berikut:
+Program ini adalah sebuah website katalog produk berkonsep e-Commerce (Toko Gadget "TechStore") yang dibangun menggunakan framework web Django dan Tailwind CSS. Website ini tidak menggunakan database relasional melainkan menggunakan list *dictionary* sebagai _hardcode_ data pada bagian `views.py`. 
 
-- **Homepage (`/`)**: Menampilkan pesan selamat datang di website katalog.
-- **Daftar Produk (`/produk/`)**: Menampilkan daftar produk (beserta harganya) dengan minimal 3 produk.
-- **Detail Produk (`/produk/<id>/`)**: Menampilkan detail informasi dari sebuah produk spesifik berdasarkan ID produk yang dipilih.
-- **Kontak (`/kontak/`)**: Menampilkan informasi kontak dari admin/pemilik website.
+Meskipun sederhana, website ini didesain menggunakan UI modern dan memiliki fitur halaman sebagai berikut:
 
-Website ini mendemostrasikan implementasi *MVT* (Model-View-Template) dalam Django, khususnya fokus pada bagian View dan Template beserta URL Routing-nya.
+- **Homepage (`/`)**: Menampilkan Hero section selamat datang, dan section keunggulan toko (Pengiriman Cepat, Garansi, CS).
+- **Katalog Produk (`/produk/`)**: Menampilkan daftar produk (6 buah produk unggulan) berbentuk Grid Card lengkap dengan gambar (diambil dari Unsplash), harga, sisa stok, dan hover effect.
+- **Detail Produk (`/produk/<id>/`)**: Menampilkan detail mendalam sebuah produk berdasarkan ID-nya, disajikan dengan layout dua kolom, lengkap dengan deskripsi, gambar high-ress, dan implementasi UI *Breadcrumb* navigasi serta tombol cart/wishlist.
+- **Kontak (`/kontak/`)**: Menampilkan informasi alamat lengkap, email, nomor telepon, dan simulasi UI Form kontak bagi pengguna yang ingin menghubungi tim.
+
+Website ini mendemostrasikan implementasi *MVT* (Model-View-Template) dalam Django dengan penekanan pada UI/UX yang _responsive_ (menggunakan Tailwind CSS CDN) dan komponen visual tambahan menggunakan *FontAwesome*.
