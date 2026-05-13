@@ -4,17 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katalog PPL</title>
+    <!-- Menambahkan Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <nav>
-        <a href="/">Home</a> | 
-        <a href="/produk/">Daftar Produk</a> | 
-        <a href="/kontak/">Kontak</a>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold">Katalog PPL</a>
+            <div class="space-x-4">
+                <a href="/" class="hover:text-blue-200 transition">Home</a>
+                <a href="/produk/" class="hover:text-blue-200 transition">Daftar Produk</a>
+                <a href="/kontak/" class="hover:text-blue-200 transition">Kontak</a>
+            </div>
+        </div>
     </nav>
-    <hr>
     
-    <div>
-        {% block content %}{% endblock %}
-    </div>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4 mt-auto">
+        <p class="text-sm">&copy; 2026 Website Katalog Sederhana. Dibuat dengan Django & Tailwind CSS.</p>
+    </footer>
 </body>
 </html>

@@ -1,6 +1,11 @@
 {% extends 'catalog/base.html' %}
 
 {% block content %}
-    <h1>Selamat Datang di Website Katalog!</h1>
-    <p>Ini adalah tugas pembuatan website katalog sederhana menggunakan Django.</p>
+    <div class="text-center py-10">
+        <h1 class="text-4xl font-extrabold text-blue-600 mb-4">Selamat Datang di Website Katalog!</h1>
+        <p class="text-lg text-gray-600">Ini adalah tugas pembuatan website katalog sederhana menggunakan Django dan Tailwind CSS.</p>
+        <div class="mt-8">
+            <a href="/produk/" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">Lihat Produk Kita</a>
+        </div>
+    </div>
 {% endblock %}

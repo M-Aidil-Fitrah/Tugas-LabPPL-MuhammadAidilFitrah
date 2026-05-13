@@ -1,11 +1,25 @@
 {% extends 'catalog/base.html' %}
 
 {% block content %}
-    <h1>Hubungi Kami</h1>
-    <p>Silakan hubungi kami melalui kontak berikut:</p>
-    <ul>
-        <li><strong>Email:</strong> admin@katalog.com</li>
-        <li><strong>Telepon:</strong> 081234567890</li>
-        <li><strong>Alamat:</strong> Jl. Pendidikan No. 1, Jakarta</li>
-    </ul>
+    <div class="max-w-lg mx-auto">
+        <h1 class="text-3xl font-bold mb-6 border-b pb-2">Hubungi Kami</h1>
+        <p class="text-gray-600 mb-6">Silakan hubungi kami melalui informasi kontak berikut:</p>
+        
+        <div class="bg-blue-50 rounded-lg p-6 border border-blue-100">
+            <ul class="space-y-4">
+                <li class="flex items-center">
+                    <span class="w-24 font-bold text-gray-700">Email:</span>
+                    <span class="text-blue-600">admin@katalog.com</span>
+                </li>
+                <li class="flex items-center">
+                    <span class="w-24 font-bold text-gray-700">Telepon:</span>
+                    <span class="text-gray-800">081234567890</span>
+                </li>
+                <li class="flex items-center">
+                    <span class="w-24 font-bold text-gray-700">Alamat:</span>
+                    <span class="text-gray-800">Darussalam, Banda Aceh</span>
+                </li>
+            </ul>
+        </div>
+    </div>
 {% endblock %}
